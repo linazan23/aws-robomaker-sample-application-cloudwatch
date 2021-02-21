@@ -1,0 +1,58 @@
+{
+	"scenarios": {
+	    "QuickNavBookStore": {
+	      "robotEnvironmentVariables": {
+	        "ROS_AWS_REGION": "us-west-2"
+	      },
+	      "simEnvironmentVariables": {
+	        "ROS_AWS_REGION": "us-west-2",
+	        "TURTLEBOT3_MODEL": "waffle_pi",
+	        "NAVIGATION_SUCCESS_COUNT": "1",
+	        "SIMULATION_WORLD": "bookstore"
+	      }
+	    },
+	    "MultiNavBookStore": {
+	      "robotEnvironmentVariables": {
+	        "ROS_AWS_REGION": "us-west-2"
+	      },
+	      "simEnvironmentVariables": {
+	        "ROS_AWS_REGION": "us-west-2",
+	        "TURTLEBOT3_MODEL": "waffle_pi",
+	        "NAVIGATION_SUCCESS_COUNT": "3",
+	        "SIMULATION_WORLD": "bookstore"
+	      }
+	    }
+	},
+	"simulations": [{
+		"scenarios": [
+			"MultiNavBookStore",
+	                "QuickNavBookStore"
+	             ],
+		"params": {
+			"failureBehavior": "Fail",
+			"iamRole": "arn:aws:iam::351367772636:role/robomaker-cicd",
+			"maxJobDurationInSeconds": 600,
+			"outputLocation": {
+				"s3Bucket": "cogniteam-bucket",
+				"s3Prefix": "test"
+			},
+			"robotApplications": [{
+				"application": "arn:aws:robomaker:eu-west-1:853714891814:robot-application/RobotApplication-zyUL606zIQGK/1613309892525",
+				"applicationVersion": "$LATEST",
+				"launchConfig": {
+					"launchFile": "await_commands.launch",
+					"packageName": "cloudwatch_robot"
+				}
+			}],
+			"simulationApplications": [{
+				"application": "arn:aws:robomaker:eu-west-1:853714891814:simulation-application/SimulationApplication-j5ROibzelK6A/1613309892486",
+				"applicationVersion": "$LATEST",
+				"launchConfig": {
+                    "packageName": "cloudwatch_simulation",
+                    "launchFile": "worlds.launch"
+				}
+			}]
+			
+		}
+	}]
+}
