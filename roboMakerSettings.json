@@ -84,10 +84,10 @@
                }
             },
             "simulation":{
-               "outputLocation":"<S3 bucket name for job outputs>",
+               "outputLocation":"cogniteam-bucket",
                "failureBehavior":"Fail",
                "maxJobDurationInSeconds":28800,
-               "iamRole":"<IAM role ARN for RoboMaker>",
+               "iamRole":"arn:aws:iam::351367772636:role/service-role/addverb_test",
                "vpcConfig": {
                    "assignPublicIp": true,
                    "securityGroups": [ "<security group id>" ],
