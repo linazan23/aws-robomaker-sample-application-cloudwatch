@@ -49,7 +49,7 @@
 				"applicationVersion": "$LATEST",
 				"launchConfig": {
                     "packageName": "cloudwatch_simulation",
-                    "launchFile": "empty_world.launch"
+                    "launchFile": "test_world.launch"
 				}
 			}]
 			
