@@ -48,8 +48,8 @@
 				"application": "arn:aws:robomaker:eu-west-1:351367772636:simulation-application/ros-melodic-sim-app/1614504275746",
 				"applicationVersion": "$LATEST",
 				"launchConfig": {
-                    "packageName": "cloudwatch_simulation",
-                    "launchFile": "view_empty_world.launch"
+				    "packageName": "cloudwatch_simulation",
+				    "launchFile": "test_world.launch"
 				}
 			}]
 			
