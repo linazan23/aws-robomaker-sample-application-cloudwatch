@@ -1,4 +1,4 @@
-simulation_ws/src/aws-robomaker-bookstore-world
+simulation_ws/src/aws-robomaker-small-house-world
 robot_ws/build
 robot_ws/bundle
 robot_ws/install
@@ -9,3 +9,5 @@ simulation_ws/bundle
 simulation_ws/install
 simulation_ws/log
 simulation_ws/src/deps
+
+
